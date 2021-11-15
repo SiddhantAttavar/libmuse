@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        applicationId "com.choosemuse.example.libmuse"
+        minSdkVersion 19
+        targetSdkVersion 29
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_7
+            targetCompatibility JavaVersion.VERSION_1_7
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:support-compat:25.3.1'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile files('libs/libmuse_android.jar')
+}
